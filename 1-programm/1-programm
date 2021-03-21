@@ -1,0 +1,17 @@
+using System;
+
+namespace Lesson_2___1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please, enter MIN temperature of the day");
+            float minTemp = float.Parse (Console.ReadLine());
+            Console.WriteLine("Please, enter MAX temperature of the day");
+            float maxTemp = float.Parse (Console.ReadLine());
+            float midTemp = (minTemp + maxTemp) / 2;
+            Console.WriteLine($"Average temperature of the day is {midTemp}");
+        }
+    }
+}

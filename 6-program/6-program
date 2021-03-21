@@ -1,0 +1,30 @@
+using System;
+
+namespace Lesson_2___6
+{
+    [Flags]
+    enum Day
+    {
+        Monday = 0b_0000001,
+        Tuesday = 0b_0000010,
+        Wednesday = 0b_0000100,
+        Thursday = 0b_0001000,
+        Friday =  0b_0010000,
+        Saturday = 0b_0100000,
+        Sunday = 0b_1000000
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Day Office1 = Day.Monday | Day.Thursday | Day.Wednesday | Day.Thursday | Day.Friday;
+            Day Office2 = Day.Monday | Day.Friday | Day.Saturday | Day.Sunday;
+            Day Office3 = Day.Monday | Day.Wednesday | Day.Friday;
+         
+            Day Office = (Day)0b0010101;
+            Console.WriteLine($"Work days: {Office}");
+
+
+        }
+    }
+}
