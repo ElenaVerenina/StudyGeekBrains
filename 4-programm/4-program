@@ -1,0 +1,31 @@
+using System;
+
+namespace lesson_2___4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string NameShop = "ООО Лента";
+            string AdressShop = "ш. Ярославское, д. 54";
+            byte ColBuy = 2;
+            string FirstBuy = "Хлеб";
+            string SecondBuy = "Молоко";
+            float PriceFirstBuy = 33.20f;
+            float PriceSecondBuy = 99.85f;
+            float ColFirstBuy = 3;
+            float ColSecondBuy = 1;
+            Console.WriteLine(NameShop);
+            Console.WriteLine(AdressShop);
+            Console.WriteLine($"{FirstBuy} кол-во  { ColFirstBuy}  - { PriceFirstBuy}");
+            Console.WriteLine($"{SecondBuy} кол-во  { ColSecondBuy}  - { PriceSecondBuy}");
+            Console.WriteLine($"Количество наименований: {ColBuy}");
+            float Sum = ColFirstBuy * PriceFirstBuy + ColSecondBuy * PriceSecondBuy;
+            float Discount = 7f;
+            double SumDiscount = Math.Round(Sum * Discount / 100,2);
+            double SumWithDiscount = Math.Round(Sum - SumDiscount,2);
+            Console.WriteLine($"СУММА СКИДКИ {Discount}%: {SumDiscount}");
+            Console.WriteLine($"ИТОГО К ОПЛАТЕ: {SumWithDiscount}");
+        }
+    }
+}
