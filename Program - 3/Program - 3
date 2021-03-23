@@ -1,0 +1,18 @@
+using System;
+
+namespace Lesson_3_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please, enter message");
+            string Message = Console.ReadLine();
+            char[] ArrayMessage = Message.ToCharArray();
+            for (int i=ArrayMessage.Length; i!=0; i--)
+            {
+                Console.Write(ArrayMessage[i-1]);
+            }
+        }
+    }
+}
