@@ -1,0 +1,26 @@
+using System;
+
+namespace Lesson_3_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int c = 10;
+            char[,] Array = new char[c, c];
+            char[] Array1 = { 'X', 'O' };
+
+            for (int i = 0; i < c; i++)
+            {
+                for (int j = 0; j < c; j++)
+                {                    
+                        Array[i, j] = Array1[rnd.Next(0, Array1.Length)];
+                        Console.Write($"{Array[i, j]}");
+                }
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
