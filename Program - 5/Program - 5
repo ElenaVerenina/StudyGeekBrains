@@ -1,0 +1,43 @@
+using System;
+
+namespace Lesson_3___5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 10;
+            Console.WriteLine("Введите 10 чисел");
+            int[] ArrayNumber = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                ArrayNumber[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Массив до сортировки:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{ArrayNumber[i]}  ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Массив после сортировки:");
+            int c = 0;
+            for (int i=0; i<n; i++)
+            {
+                for (int j=n-1; j!=0;j--)
+                {
+                    if (ArrayNumber[j] < ArrayNumber[j-1])
+                    {
+                        c = ArrayNumber[j];
+                        ArrayNumber[j] = ArrayNumber[j - 1];
+                        ArrayNumber[j - 1] = c;
+                    }
+                }               
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{ArrayNumber[i]}  ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
