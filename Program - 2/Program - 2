@@ -1,0 +1,27 @@
+using System;
+
+namespace Lesson3_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[,] NumberBook =
+            {
+                {"Elena", "Maxim", "Andrey", "Anna", "Mihail" },
+                { "8(499) 123-23-34", "8(499) 123-23-35", "8(499) 123-23-36", "8(499) 123-23-37", "8(499) 123-23-38"}
+            };
+
+            for (int i=0; i<5;i++)
+            {
+                for (int j=0;j<2;j++)
+                {
+                    Console.Write($"\t {NumberBook[j, i]}\t\t");
+                }
+                Console.WriteLine(); 
+            }
+
+               
+        }
+    }
+}
