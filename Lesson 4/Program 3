@@ -1,0 +1,69 @@
+using System;
+
+namespace Lesoon_4_3
+{
+    class Program
+    {
+        public enum Seasons
+        {
+            Winter,
+            Spring,
+            Summer,
+            Autumn
+        }
+
+        static bool ErrorNumber (int Number, ref bool NumCorrect)
+        {
+            if (Number < 1 || Number > 12)
+            {
+                Console.Clear();
+                Console.WriteLine("Ошибка: введите число от 1 до 12");
+                return NumCorrect = false;
+            }
+            else return NumCorrect = true;
+            
+        }
+
+        public static string NumSeason (int NumberMonth)
+        {
+            if (NumberMonth == 12 || NumberMonth <= 2)
+            {
+                Seasons SeasonName = (Seasons)0;
+                return SeasonName.ToString();
+
+            }
+            else if (NumberMonth > 2 && NumberMonth <= 5)
+            {
+                Seasons SeasonName = (Seasons)1;
+                return SeasonName.ToString();
+            }
+            else if (NumberMonth > 5 && NumberMonth <= 8)
+            {
+                Seasons SeasonName = (Seasons)2;
+                return SeasonName.ToString();
+            }
+            else if (NumberMonth > 8 && NumberMonth <= 11)
+            {
+                Seasons SeasonName = (Seasons)3;
+                return SeasonName.ToString();
+            }
+            return "";
+        }
+        static void Main(string[] args)
+        {
+            bool NumCorrect = false;
+            int NumberMonth;
+            Console.WriteLine("Пожалуйста, введите число от 1 до 12");
+            do
+            {
+                NumberMonth = Convert.ToInt32(Console.ReadLine());
+                ErrorNumber(NumberMonth, ref NumCorrect);
+            } while (NumCorrect==false);
+            
+            string SeasonName = NumSeason(NumberMonth);
+            Console.WriteLine($"Season: {SeasonName}");
+
+
+        }
+    }
+}
