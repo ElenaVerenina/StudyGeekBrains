@@ -1,0 +1,31 @@
+using System;
+
+namespace Lesson_4_5
+{
+    class Program
+    {
+        static int Factorial (int Number)
+        {
+            int [] FactNumber = new int [Number];
+            FactNumber[0] = 1;
+            if (Number == 1) return FactNumber[Number-1] = 1;
+            else
+            {
+                FactNumber[1] = 2;
+                for (int i = 2; i < Number; i++)
+                {
+                    FactNumber[i] = FactNumber[i - 1] * (i + 1);
+                }
+                return FactNumber[Number - 1];
+            }
+            
+        }
+        static void Main(string[] args)
+        {
+            int Fact = 0;
+            Console.WriteLine("Please, enter Number of Factorial");
+            Fact = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Factorial of number {Fact} - {Factorial(Fact)}");
+        }
+    }
+}
