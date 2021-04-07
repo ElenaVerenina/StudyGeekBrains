@@ -1,0 +1,24 @@
+using System;
+using System.IO;
+
+namespace Lesson_5___3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите числа от 0 до 255, для прекращения ввода нажмите q");
+            string filename = "bin.bin";
+            byte[] a = new byte[100];
+            int i = 0;
+            char key = Convert.ToChar(Console.ReadLine());
+            while (key !='q')
+            {
+                a[i] = Convert.ToByte(key);
+                i++;
+                key = Convert.ToChar(Console.ReadLine());
+            }
+            File.WriteAllBytes(filename, a);
+        }
+    }
+}
