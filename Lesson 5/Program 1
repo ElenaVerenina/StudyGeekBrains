@@ -1,0 +1,16 @@
+using System;
+using System.IO;
+
+namespace Lesson_5___1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите текст для записи в файл");
+            string text = Console.ReadLine();
+            string filename = "text.txt";
+            File.WriteAllText(filename, text);
+        }
+    }
+}
