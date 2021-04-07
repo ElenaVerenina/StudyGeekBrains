@@ -1,0 +1,18 @@
+using System;
+using System.IO;
+
+
+namespace Lesson_5___4
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            string dir = @"C:\1\2\Note1.txt";
+            string filename = "text.txt";
+                File.WriteAllText(filename, Convert.ToString(Directory.GetParent(dir)));
+                File.AppendAllText(filename, @"\" + Path.GetFileName(dir));
+        }
+    }
+}
