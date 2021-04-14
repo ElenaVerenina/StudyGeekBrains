@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lesson_8._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Properties.Settings.Default.Greeting);
+            if (string.IsNullOrEmpty(Properties.Settings.Default.UserName))
+            {
+
+                Console.WriteLine("Enter your Name:");
+                Properties.Settings.Default.UserName = Console.ReadLine();
+                Properties.Settings.Default.Save();
+            }
+            if (Properties.Settings.Default.Age == 0)
+            {
+
+                Console.WriteLine("Enter your age:");
+                Properties.Settings.Default.Age = Convert.ToInt32(Console.ReadLine());
+                Properties.Settings.Default.Save();
+            }
+            if (string.IsNullOrEmpty(Properties.Settings.Default.Career))
+            {
+
+                Console.WriteLine("Enter your career:");
+                Properties.Settings.Default.Career = Console.ReadLine();
+                Properties.Settings.Default.Save();
+            }
+            string userName = Properties.Settings.Default.UserName;
+            int age = Properties.Settings.Default.Age;
+            string career = Properties.Settings.Default.Career;
+            Console.WriteLine($"Your name: {userName}, your age: {age}, your profession: {career}");
+            Console.ReadKey(true);
+        }
+    }
+}
